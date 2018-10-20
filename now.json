@@ -1,0 +1,16 @@
+{
+    "name": "cheshirecode-next-boilerplate",
+    "alias": "cheshirecode-next-boilerplate",
+    "regions": ["all"],
+    "public": true,
+    "type": "docker",
+    "features": {
+      "cloud": "v2"
+    },
+    "build": {
+        "env": {
+          "NODE_IMAGE": "8.12.0-alpine",
+          "NODE_ENV": "production"
+        }
+      }
+  }

@@ -1,0 +1,83 @@
+{
+  "name": "cheshirecode-next-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "bin": "server/index.js",
+  "keywords": [
+    "nextjs",
+    "esm",
+    "rebass",
+    "emotion",
+    "unstated",
+    "module-resolver"
+  ],
+  "author": "dac4158@gmail.com",
+  "license": "MIT",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon -e mjs,js,yaml --inspect=0.0.0.0:9223 -r esm server",
+    "build": "NODE_ENV=production next build client",
+    "export": "NODE_ENV=production yarn build && next export client",
+    "start": "NODE_ENV=production node -r esm server",
+    "deploy": "rm -rf client/.next client/bundles && npx now alias $(npx now .) cheshirecode-next-boilerplate",
+    "analyze": "NODE_ENV=production BUNDLE_ANALYZE=both yarn build",
+    "count": "npx cloc {*.js,client,server,static} --exclude-dir=.next,bundles,node_modules --exclude-ext=json --by-file  --skip-uniqueness"
+  },
+  "browser": {
+    "express": false,
+    "esm": false,
+    "webpack": false
+  },
+  "dependencies": {
+    "emotion": "^9.2.12",
+    "emotion-server": "^9.2.12",
+    "esm": "^3.0.84",
+    "module-alias": "^2.1.0",
+    "next": "^7.0.0",
+    "polka": "^0.5.1",
+    "preact": "^8.3.1",
+    "preact-compat": "^3.18.4",
+    "preact-context": "^1.1.2",
+    "prop-types": "^15.6.2",
+    "ramda": "^0.25.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-emotion": "^9.2.12",
+    "reset-css": "^4.0.1",
+    "svg-sprite-loader": "^4.1.2",
+    "unstated": "^2.1.1",
+    "unstated-debug": "^0.3.0"
+  },
+  "devDependencies": {
+    "@zeit/next-bundle-analyzer": "^0.1.2",
+    "@zeit/next-css": "^1.0.1",
+    "babel-plugin-emotion": "^9.2.11",
+    "babel-plugin-import": "^1.9.1",
+    "babel-plugin-inline-dotenv": "^1.1.2",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "eslint": "^5.6.1",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-config-recommended": "^4.0.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-module-resolver": "^0.8.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.1.0",
+    "lint-staged": "^7.3.0",
+    "next-optimized-images": "^1.4.1",
+    "nodemon": "^1.12.1",
+    "prettier": "^1.14.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+node_modules
+Dockerfile
+**/out
+**/data
+yarn.done
+.DS_Store
+**/.next
+client/bundles
