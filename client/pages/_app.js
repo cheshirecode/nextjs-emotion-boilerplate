@@ -27,13 +27,13 @@ class CustomApp extends App {
   render() {
     const {
       Component,
-      // pageProps: { title },
+      pageProps: { title },
       pageProps,
       unstatedStore
     } = this.props;
     return (
       <Container>
-        {/* <CustomHead title={title} /> */}
+        <CustomHead title={title} />
         <Provider inject={unstatedStore}>
           <Component {...pageProps} />
         </Provider>

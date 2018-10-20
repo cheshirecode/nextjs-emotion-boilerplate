@@ -63,21 +63,6 @@ module.exports = phase => {
             }
             return rule;
           });
-          // // not gonna happen due to https://github.com/emotion-js/emotion/pull/896
-          // if (!dev) {
-          //   if (isServer) {
-          //     config.externals = ['react', 'react-dom', ...config.externals];
-          //   }
-
-          //   config.resolve.alias = {
-          //     ...config.resolve.alias,
-          //     react: path.join(__dirname, 'preact-compat'),
-          //     react$: path.join(__dirname, 'preact-compat'),
-          //     'react-dom': 'preact-compat',
-          //     'react-dom$': 'preact-compat',
-          //     'react-emotion': 'preact-emotion'
-          //   };
-          // }
 
           return config;
         },
