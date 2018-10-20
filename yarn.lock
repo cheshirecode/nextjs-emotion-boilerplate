@@ -3236,6 +3236,14 @@ eslint-config-recommended@^4.0.0:
     eslint-config-node "^4.0.0"
     eslint-config-react-native "^4.0.0"
 
+eslint-import-resolver-babel-module@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-import-resolver-babel-module/-/eslint-import-resolver-babel-module-4.0.0.tgz#1c596f7fb9815050292c8750d523b27a5444b4bf"
+  integrity sha512-aPj0+pG0H3HCaMD9eRDYEzPdMyKrLE2oNhAzTXd2w86ZBe3s7drSrrPwVTfzO1CBp13FGk8S84oRmZHZvSo0mA==
+  dependencies:
+    pkg-up "^2.0.0"
+    resolve "^1.4.0"
+
 eslint-import-resolver-node@^0.3.1:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.2.tgz#58f15fb839b8d0576ca980413476aab2472db66a"
@@ -3281,13 +3289,6 @@ eslint-plugin-json@^1.2.0:
   integrity sha512-7/8a+rwJLI5gq1ofZi33FmaDlRc49h3hkoHKE0SejSN3W8nmEzggeaI/MUWnxjHyVaPjvlzZxdpoMOCywLHDyA==
   dependencies:
     jshint "^2.9.6"
-
-eslint-plugin-module-resolver@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-module-resolver/-/eslint-plugin-module-resolver-0.8.0.tgz#5d8802d2787d512f88eb335f04b8e3add99d9f5f"
-  integrity sha512-5zGjva7/n9kDq8CENVIQAkPr4hHOl+T2049UvKjK3TlFUb3ukzll8CWQowJcE08twG+dfOnQblG6Ok4sScWwzg==
-  dependencies:
-    find-babel-config "^1.1.0"
 
 eslint-plugin-prettier@^3.0.0:
   version "3.0.0"
@@ -7364,6 +7365,14 @@ preact-context@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/preact-context/-/preact-context-1.1.2.tgz#2494f74a4295f608962c7bc3e7d82408d7d10377"
   integrity sha512-eBPt5qC3rMCUF2j9czks7KV8CO1TT0J7MLCz68f87JeoIsp9Luw89ZJaOJqwCUeJMqPEvNPbbVUFuxyTdN5bPA==
+
+preact-emotion@^9.2.12:
+  version "9.2.12"
+  resolved "https://registry.yarnpkg.com/preact-emotion/-/preact-emotion-9.2.12.tgz#0e2687566992cc193522adb4701639338eed4f99"
+  integrity sha512-ngQNpZeQNpqIf1JmjJZV/zQWKccjW2+8GE862WqxdNQy+fRvPvswf0ns+qLVHtRZOffCtNw8VW0za6Fr3O3Vtg==
+  dependencies:
+    babel-plugin-emotion "^9.2.11"
+    create-emotion-styled "^9.2.8"
 
 preact-render-to-string@^3.8.2:
   version "3.8.2"
