@@ -14,7 +14,6 @@ COPY package.json yarn.lock .yarnclean .yarnrc ./
 RUN yarn
 ARG NODE_ENV
 ENV NODE_ENV $NODE_ENV
-ARG CLEANUP
 COPY . .
 RUN yarn build \
   && rm -rf node_modules \
