@@ -10,7 +10,7 @@ const nextConfig = ({ defaultConfig }) => ({
 module.exports = phase => {
   if (phase === PHASE_DEVELOPMENT_SERVER || phase === PHASE_PRODUCTION_BUILD) {
     //this doesn't go through Babel so we need to
-    //manually call dotenv, once
+    //manually call dotenv to unpack environments variables into process.env
     require('dotenv').config();
     const withCSS = require('@zeit/next-css');
     const withOptimizedImages = require('next-optimized-images');
@@ -45,10 +45,6 @@ module.exports = phase => {
       withCSS,
       config => ({
         ...config,
-        // cssLoaderOptions: {
-        //   importLoaders: 1,
-        //   localIdentName: '[local]___[hash:base64:5]'
-        // }
         webpack: (config, { dev, isServer }) => {
           config.module.rules.push({
             test: /.(woff|woff2|ttf|eot)$/,
@@ -67,19 +63,20 @@ module.exports = phase => {
             }
             return rule;
           });
-          // if (!dev) {
-          //   if (isServer) {
-          //     config.externals = ['react', 'react-dom', ...config.externals];
-          //   }
+          if (!dev) {
+            if (isServer) {
+              config.externals = ['react', 'react-dom', ...config.externals];
+            }
 
-          //   config.resolve.alias = {
-          //     ...config.resolve.alias,
-          //     react: path.join(__dirname, 'preact-compat'),
-          //     react$: path.join(__dirname, 'preact-compat'),
-          //     'react-dom': 'preact-compat',
-          //     'react-dom$': 'preact-compat'
-          //   };
-          // }
+            config.resolve.alias = {
+              ...config.resolve.alias,
+              react: path.join(__dirname, 'preact-compat'),
+              react$: path.join(__dirname, 'preact-compat'),
+              'react-dom': 'preact-compat',
+              'react-dom$': 'preact-compat',
+              'react-emotion': 'preact-emotion'
+            };
+          }
 
           return config;
         },

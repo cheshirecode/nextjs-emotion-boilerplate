@@ -1,6 +1,5 @@
 import React from 'react';
 import { Basic, Combined, Animated, bounce } from '@cnbu-static/styles';
-import withEmotion from '@cnbu-hocs/withEmotion';
 
 const SampleContent = ({ className }) => (
   <div className={className}>
@@ -14,4 +13,4 @@ const SampleContent = ({ className }) => (
   </div>
 );
 
-export default withEmotion(SampleContent);
+export default SampleContent;

@@ -2,6 +2,7 @@ import React from 'react';
 import App, { Container } from 'next/app';
 import { Provider } from 'unstated';
 import withStorePage from '@cnbu-hocs/withStorePage';
+import withEmotion from '@cnbu-hocs/withEmotion';
 import { compose } from 'ramda';
 import CustomHead from '@cnbu-components/CustomHead';
 import '@cnbu-static/styles/index.css';
@@ -41,4 +42,7 @@ class CustomApp extends App {
   }
 }
 
-export default compose(withStorePage)(CustomApp);
+export default compose(
+  withStorePage,
+  withEmotion
+)(CustomApp);
