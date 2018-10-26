@@ -6,8 +6,8 @@ services:
   - docker
 
 before_install:
-  - docker build -t cheshireCode/cheshirecode-next-boilerplate .
-  - docker run -i cheshireCode/cheshirecode-next-boilerplate yarn count
+  - docker build -t cheshirecode/cheshirecode-next-boilerplate .
+  - docker run -i cheshirecode/cheshirecode-next-boilerplate yarn count
 
 script:
   - docker ps -a
