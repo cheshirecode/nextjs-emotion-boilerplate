@@ -2,6 +2,7 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/cheshirecode/cheshirecode-next-boilerplate.svg)](https://greenkeeper.io/)
 
+- `master` branch deployed (if Travis build passes) at https://cheshirecode-next-boilerplate.now.sh/
 
 |     | React 16+ | Preact + preact-compat | Rebass v3
 | --- |  ---  | ---    | ---
