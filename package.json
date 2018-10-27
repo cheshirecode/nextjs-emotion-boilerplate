@@ -18,7 +18,7 @@
     "build": "NODE_ENV=production next build client",
     "export": "NODE_ENV=production yarn build && next export client",
     "start": "NODE_ENV=production node -r esm server",
-    "deploy": "rm -rf client/.next client/bundles && npx now alias $(npx now .) cheshirecode-next-boilerplate",
+    "deploy": "rm -rf client/.next client/bundles && npx now alias --token $NOW_TOKEN $(npx now . --token $NOW_TOKEN) cheshirecode-next-boilerplate",
     "analyze": "NODE_ENV=production BUNDLE_ANALYZE=both yarn build",
     "count": "npx cloc {*.js,client,server,static} --exclude-dir=.next,bundles,node_modules --exclude-ext=json --by-file  --skip-uniqueness"
   },
