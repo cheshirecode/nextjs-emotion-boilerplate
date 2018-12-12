@@ -34,7 +34,7 @@
     "next": "^7.0.0",
     "polka": "^0.5.1",
     "prop-types": "^15.6.2",
-    "ramda": "^0.25.0",
+    "ramda": "^0.26.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-emotion": "^9.2.12",
