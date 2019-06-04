@@ -5,6 +5,8 @@ import withStorePage from '@cnbu-hocs/withStorePage';
 import withEmotion from '@cnbu-hocs/withEmotion';
 import { compose } from 'ramda';
 import CustomHead from '@cnbu-components/CustomHead';
+import { cache } from 'emotion';
+import { CacheProvider } from '@emotion/core';
 import '@cnbu-static/styles/index.css';
 
 class CustomApp extends App {
@@ -32,12 +34,14 @@ class CustomApp extends App {
       unstatedStore
     } = this.props;
     return (
-      <Container>
-        <CustomHead title={title} />
-        <Provider inject={unstatedStore}>
-          <Component {...pageProps} />
-        </Provider>
-      </Container>
+      <CacheProvider value={cache}>
+        <Container>
+          <CustomHead title={title} />
+          <Provider inject={unstatedStore}>
+            <Component {...pageProps} />
+          </Provider>
+        </Container>
+      </CacheProvider>
     );
   }
 }

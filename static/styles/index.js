@@ -1,4 +1,5 @@
-import styled, { keyframes, css, injectGlobal } from 'react-emotion';
+import styled from '@emotion/styled';
+import { keyframes, css, injectGlobal } from 'emotion';
 
 export const injectGlobalStyles = () => injectGlobal`
   html,body {

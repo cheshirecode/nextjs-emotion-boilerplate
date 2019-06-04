@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { hydrate } from 'react-emotion';
+import { hydrate } from 'emotion';
 import { injectGlobalStyles } from '@cnbu-static/styles';
 
 export default App => {
