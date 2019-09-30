@@ -42,7 +42,7 @@
     "reset-css": "^4.0.1",
     "svg-sprite-loader": "^4.1.2",
     "unstated": "^2.1.1",
-    "unstated-debug": "^0.3.0"
+    "unstated-debug": "^0.4.0"
   },
   "devDependencies": {
     "@zeit/next-bundle-analyzer": "^0.1.2",
