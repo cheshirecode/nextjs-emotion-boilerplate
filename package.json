@@ -20,7 +20,9 @@
     "start": "NODE_ENV=production node -r esm server",
     "deploy": "rm -rf client/.next client/bundles && npx now alias --token $NOW_TOKEN $(npx now . --token $NOW_TOKEN) cheshirecode-next-boilerplate",
     "analyze": "NODE_ENV=production BUNDLE_ANALYZE=both yarn build",
-    "count": "npx cloc {*.js,client,server,static} --exclude-dir=.next,bundles,node_modules --exclude-ext=json --by-file  --skip-uniqueness"
+    "count": "npx cloc {*.js,client,server,static} --exclude-dir=.next,bundles,node_modules --exclude-ext=json --by-file  --skip-uniqueness",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "browser": {
     "express": false,
@@ -33,7 +35,7 @@
     "emotion": "^10.0.0",
     "emotion-server": "^10.0.0",
     "esm": "^3.0.84",
-    "next": "^9.0.6",
+    "next": "^9.1.5",
     "polka": "^0.5.1",
     "prop-types": "^15.6.2",
     "ramda": "^0.26.0",
@@ -42,7 +44,8 @@
     "reset-css": "^4.0.1",
     "svg-sprite-loader": "^4.1.2",
     "unstated": "^2.1.1",
-    "unstated-debug": "^0.3.0"
+    "unstated-debug": "^0.3.0",
+    "snyk": "^1.279.1"
   },
   "devDependencies": {
     "@zeit/next-bundle-analyzer": "^0.1.2",
@@ -79,5 +82,6 @@
       "prettier --write",
       "git add"
     ]
-  }
+  },
+  "snyk": true
 }
