@@ -6,3 +6,7 @@ patch:
   SNYK-JS-LODASH-450202:
     - next > babel-plugin-transform-define > lodash:
         patched: '2020-01-24T07:27:06.944Z'
+    - snyk > inquirer > lodash:
+        patched: '2020-01-24T07:42:33.717Z'
+    - snyk > snyk-nuget-plugin > dotnet-deps-parser > lodash:
+        patched: '2020-01-24T07:42:33.717Z'
