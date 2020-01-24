@@ -1,5 +1,5 @@
 const { PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_BUILD } = require('next/constants');
-// const path = require('path');
+const path = require('path');
 
 const nextConfig = ({ defaultConfig }) => ({
   ...defaultConfig,
@@ -45,7 +45,7 @@ module.exports = phase => {
       withCSS,
       config => ({
         ...config,
-        webpack: (config /* , { dev, isServer } */) => {
+        webpack: (config, { dev, isServer }) => {
           config.module.rules.push({
             test: /.(woff|woff2|ttf|eot)$/,
             loader: 'file-loader',
@@ -63,6 +63,21 @@ module.exports = phase => {
             }
             return rule;
           });
+
+          if (!dev) {
+            if (isServer) {
+              config.externals = ['react', 'react-dom', ...config.externals];
+            }
+
+            config.resolve.alias = {
+              ...config.resolve.alias,
+              react: path.join(__dirname, 'preact-compat'),
+              react$: path.join(__dirname, 'preact-compat'),
+              'react-dom': 'preact-compat',
+              'react-dom$': 'preact-compat',
+              'react-emotion': 'preact-emotion'
+            };
+          }
 
           return config;
         },

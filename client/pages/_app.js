@@ -1,5 +1,5 @@
 import React from 'react';
-import App, { Container } from 'next/app';
+import App from 'next/app';
 import { Provider } from 'unstated';
 import withStorePage from '@cnbu-hocs/withStorePage';
 import withEmotion from '@cnbu-hocs/withEmotion';
@@ -35,12 +35,10 @@ class CustomApp extends App {
     } = this.props;
     return (
       <CacheProvider value={cache}>
-        <Container>
           <CustomHead title={title} />
           <Provider inject={unstatedStore}>
             <Component {...pageProps} />
           </Provider>
-        </Container>
       </CacheProvider>
     );
   }

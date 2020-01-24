@@ -23,7 +23,10 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
+        <style
+            data-emotion-css={this.props.ids.join(' ')}
+            dangerouslySetInnerHTML={{ __html: this.props.css }}
+          />
         </Head>
         <body>
           <div dangerouslySetInnerHTML={{ __html: this.props.spriteContent }} />
