@@ -1,5 +1,5 @@
 import React from 'react';
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 import sprite from 'svg-sprite-loader/runtime/sprite.build';
 import { extractCritical } from 'emotion-server';
 
@@ -21,7 +21,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html>
+      <Html>
         <Head>
         <style
             data-emotion-css={this.props.ids.join(' ')}
@@ -33,7 +33,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }

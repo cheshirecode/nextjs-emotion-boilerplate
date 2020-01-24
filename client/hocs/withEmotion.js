@@ -2,30 +2,19 @@ import React, { Component } from 'react';
 import { hydrate } from 'emotion';
 import { injectGlobalStyles } from '@cnbu-static/styles';
 
-export default App => {
-  class ComponentWithEmotion extends Component {
-    static async getInitialProps(appContext) {
-      const initialProps = App.getInitialProps ? await App.getInitialProps(appContext) : {};
-      return {
-        ...initialProps
-      };
-    }
-
-    constructor(props) {
-      super(props);
-    }
-
+export default ComposedComponent => {
+  class HOC extends Component {
     componentWillMount() {
       if (typeof window !== 'undefined') {
-        hydrate(window.__NEXT_DATA__.ids);
+        hydrate(window.__NEXT_DATA__.ids)
       }
-      injectGlobalStyles();
+      // injectGlobalStyles()
     }
 
     render() {
-      return <App {...this.props} />;
+      return <ComposedComponent/>
     }
   }
 
-  return ComponentWithEmotion;
+  return HOC
 };

@@ -10,13 +10,6 @@ import { CacheProvider } from '@emotion/core';
 import '@cnbu-static/styles/index.css';
 
 class CustomApp extends App {
-  static async getInitialProps({ Component /*,  router */, ctx }) {
-    return {
-      pageProps: {
-        ...(Component.getInitialProps ? await Component.getInitialProps(ctx) : {})
-      }
-    };
-  }
   componentDidCatch(error, info) {
     super.componentDidCatch(error, info);
   }
@@ -27,19 +20,16 @@ class CustomApp extends App {
   }
 
   render() {
-    const {
-      Component,
-      pageProps: { title },
-      pageProps,
-      unstatedStore
-    } = this.props;
+    const { Component, pageProps: { title = '' } = {}, pageProps, unstatedStore } = this.props;
     return (
-      <CacheProvider value={cache}>
-          <CustomHead title={title} />
-          <Provider inject={unstatedStore}>
-            <Component {...pageProps} />
-          </Provider>
-      </CacheProvider>
+      // <CacheProvider value={cache}>
+      <>
+        <CustomHead title={title} />
+        <Provider inject={unstatedStore}>
+          <Component {...pageProps} />
+        </Provider>
+      </>
+      // </CacheProvider>
     );
   }
 }

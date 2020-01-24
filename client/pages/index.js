@@ -8,7 +8,7 @@ class Index extends PureComponent {
     };
   }
   render() {
-    return <SampleContent />;
+    return <div />;
   }
 }
 export default Index;

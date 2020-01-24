@@ -10,9 +10,11 @@ const app = next({
   dir: path.resolve(__dirname, '../client')
 });
 if (!dev) {	
-  moduleAlias.addAlias('react', path.resolve(__dirname, '../preact-compat'));	
-  moduleAlias.addAlias('react-dom', 'preact-compat');	
-  moduleAlias.addAlias('react-emotion', 'preact-emotion');	
+  moduleAlias.addAliases({
+    react: 'preact/compat',
+    'react-dom': 'preact/compat',
+    'react-emotion': 'preact-emotion'
+  })	
 }
 const handle = app.getRequestHandler();
 const port = parseInt(process.env.PORT, 10) || 3000;
