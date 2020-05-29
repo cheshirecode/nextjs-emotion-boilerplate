@@ -1,6 +1,6 @@
 # cheshirecode-next-boilerplate
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/cheshirecode/cheshirecode-next-boilerplate.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/cheshirecode/cheshirecode-next-boilerplate.svg?branch=master)](https://travis-ci.org/cheshirecode/cheshirecode-next-boilerplate)
 
 - `master` branch deployed (if) at https://cheshirecode-next-boilerplate.now.sh/
