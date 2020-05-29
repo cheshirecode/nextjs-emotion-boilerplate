@@ -42,7 +42,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "reset-css": "^4.0.1",
-    "svg-sprite-loader": "^4.1.2",
+    "svg-sprite-loader": "^5.0.0",
     "unstated": "^2.1.1",
     "unstated-debug": "^0.3.0",
     "snyk": "^1.279.1"
