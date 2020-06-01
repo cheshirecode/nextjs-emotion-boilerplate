@@ -6,7 +6,7 @@ module.exports = api => {
     presets: [],
     plugins: [
       ['inline-dotenv'],
-      ['@emotion/core', { inline: true }],
+      ['module:@emotion/core', { inline: true }],
       [
         'import',
         {

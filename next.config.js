@@ -4,7 +4,9 @@ const { PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_BUILD } = require('next/const
 const nextConfig = ({ defaultConfig }) => ({
   ...defaultConfig,
   encoding: 'utf-8',
-  webpack: config => ({ ...config, node: { ...config.node, fs: 'empty' } })
+  webpack: config => ({ ...config, node: { ...config.node, fs: 'empty' } }),
+  target: 'server',
+  poweredByHeader: false
 });
 
 module.exports = phase => {
@@ -12,17 +14,18 @@ module.exports = phase => {
     //this doesn't go through Babel so we need to
     //manually call dotenv to unpack environments variables into process.env
     require('dotenv').config();
-    const withCSS = require('@zeit/next-css');
+    // const withCSS = require('@zeit/next-css');
     const withOptimizedImages = require('next-optimized-images');
-    const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
+    const withBundleAnalyzer = require('@next/bundle-analyzer')({
+      enabled: process.env.ANALYZE === 'true',
+    })
     const compose = require('ramda/src/compose.js');
     const fullConfig = compose(
       withBundleAnalyzer,
       config => ({
         ...config,
-        //withBundleAnalyzer
-        analyzeServer: ['server', 'both'].includes(process.env.BUNDLE_ANALYZE),
-        analyzeBrowser: ['browser', 'both'].includes(process.env.BUNDLE_ANALYZE),
+        analyzeServer: ['server', 'both'].includes(process.env.ANALYZE),
+        analyzeBrowser: ['browser', 'both'].includes(process.env.ANALYZE),
         bundleAnalyzerConfig: {
           server: {
             analyzerMode: 'static',
@@ -42,7 +45,7 @@ module.exports = phase => {
         optipng: false,
         pngquant: null //change to {} to process
       }),
-      withCSS,
+      // withCSS,
       config => ({
         ...config,
         webpack: (config /* , { dev, isServer } */) => {

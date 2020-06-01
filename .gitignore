@@ -82,3 +82,4 @@ pkg
 
 #VS Code settings
 .vscode
+.vercel

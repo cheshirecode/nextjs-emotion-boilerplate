@@ -18,11 +18,9 @@
     "build": "NODE_ENV=production next build client",
     "export": "NODE_ENV=production yarn build && next export client",
     "start": "NODE_ENV=production node -r esm server",
-    "deploy": "rm -rf client/.next client/bundles && npx now alias --token $NOW_TOKEN $(npx now . --token $NOW_TOKEN) cheshirecode-next-boilerplate",
-    "analyze": "NODE_ENV=production BUNDLE_ANALYZE=both yarn build",
-    "count": "npx cloc {*.js,client,server,static} --exclude-dir=.next,bundles,node_modules --exclude-ext=json --by-file  --skip-uniqueness",
-    "snyk-protect": "snyk protect",
-    "prepare": "yarn run snyk-protect"
+    "deploy": "rm -rf client/.next client/bundles && npx vercel alias $(npx vercel . --token $NOW_TOKEN) cheshirecode-next-boilerplate",
+    "analyze": "NODE_ENV=production ANALYZE=both yarn build",
+    "count": "npx cloc {*.js,client,server,static} --exclude-dir=.next,bundles,node_modules --exclude-ext=json --by-file  --skip-uniqueness"
   },
   "browser": {
     "express": false,
@@ -42,14 +40,13 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "reset-css": "^4.0.1",
+    "snyk": "^1.279.1",
     "svg-sprite-loader": "^5.0.0",
     "unstated": "^2.1.1",
-    "unstated-debug": "^0.3.0",
-    "snyk": "^1.279.1"
+    "unstated-debug": "^0.3.0"
   },
   "devDependencies": {
-    "@zeit/next-bundle-analyzer": "^0.1.2",
-    "@zeit/next-css": "^1.0.1",
+    "@next/bundle-analyzer": "^9.4.4",
     "babel-plugin-emotion": "^10.0.0",
     "babel-plugin-import": "^1.9.1",
     "babel-plugin-inline-dotenv": "^1.1.2",
@@ -63,10 +60,10 @@
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
-    "imagemin-mozjpeg": "^8.0.0",
-   "imagemin-optipng": "^8.0.0",
-    "imagemin-svgo": "^8.0.0",
     "husky": "^2.0.0",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^8.0.0",
     "lint-staged": "^8.0.0",
     "next-optimized-images": "^2.0.0",
     "nodemon": "1.18.10",
