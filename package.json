@@ -43,7 +43,7 @@
     "snyk": "^1.279.1",
     "svg-sprite-loader": "^5.0.0",
     "unstated": "^2.1.1",
-    "unstated-debug": "^0.3.0"
+    "unstated-debug": "^0.4.0"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^9.4.4",
