@@ -3,9 +3,17 @@
   "tabWidth": 2,
   "singleQuote": true,
   "trailingComma": "none",
-  "parser": "babylon",
-  "overrides": [{
-    "files": ".*rc",
-    "options": { "parser": "json" }
-  }]
+  "parser": "babel",
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "options": {
+        "parser": "typescript"
+      }
+    },
+    {
+      "files": ["*.json", "*.jsonc", ".*rc"],
+      "options": { "parser": "json" }
+    }
+  ]
 }

@@ -1,12 +1,10 @@
 import React from 'react';
 import App, { Container } from 'next/app';
-import { Provider } from 'unstated';
-import withStorePage from '@cnbu-hocs/withStorePage';
 import withEmotion from '@cnbu-hocs/withEmotion';
 import { compose } from 'ramda';
 import CustomHead from '@cnbu-components/CustomHead';
 import { cache } from 'emotion';
-import { CacheProvider } from '@emotion/core';
+import { CacheProvider } from '@emotion/react';
 import '@cnbu-static/styles/index.css';
 
 class CustomApp extends App {
@@ -20,26 +18,17 @@ class CustomApp extends App {
   componentDidCatch(error, info) {
     super.componentDidCatch(error, info);
   }
-
-  componentDidMount() {
-    let UNSTATED = require('unstated-debug');
-    UNSTATED.logStateChanges = true;
-  }
-
   render() {
     const {
       Component,
       pageProps: { title },
       pageProps,
-      unstatedStore
     } = this.props;
     return (
       <CacheProvider value={cache}>
         <Container>
           <CustomHead title={title} />
-          <Provider inject={unstatedStore}>
-            <Component {...pageProps} />
-          </Provider>
+          <Component {...pageProps} />
         </Container>
       </CacheProvider>
     );
@@ -47,6 +36,5 @@ class CustomApp extends App {
 }
 
 export default compose(
-  withStorePage,
   withEmotion
 )(CustomApp);

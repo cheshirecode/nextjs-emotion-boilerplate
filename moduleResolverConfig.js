@@ -1,6 +1,7 @@
 module.exports = {
   root: ['./'],
   alias: {
+    '~': './client',
     '^@cnbu/(.+)': './client/\\1',
     '@cnbu-components': './client/components',
     '@cnbu-containers': './client/containers',

@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "module": "commonjs",
+    "jsx": "react",
+    "sourceMap": true,
+    "strict": false,
+    "skipLibCheck": true,
+    "paths": {
+      "~/*": ["./client/*"],
+      "@/*": ["./client/*"],
+      "@cnbu-components/*": ["./client/components/*"],
+      "@cnbu-containers/*": ["./client/containers/*"],
+      "@cnbu-hocs/*": ["./client/hocs/*"],
+      "@cnbu-services/*": ["./client/services/*"],
+      "@cnbu-static/*": ["./static/*"]
+    }
+  },
+  "include": [
+    "./client/**/*",
+    "./server/**/*",
+  ],
+  "exclude": [
+    "./node_modules",
+    "./node_modules/*",
+    "./node_modules/@types/node/index.d.ts",
+  ]
+}

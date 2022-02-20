@@ -19,21 +19,19 @@ const eslintConfig = {
     'plugin:react/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
-    'prettier',
-    'prettier/react'
+    'prettier'
   ],
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   parserOptions: {
-    ecmaVersion: 8,
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true
     }
   },
-  plugins: ['babel', 'import', 'react', 'prettier', 'json'],
+  plugins: ['@babel', 'import', '@emotion', 'react', 'prettier', 'json'],
   settings: {
     react: {
-      version: '^16.2.0'
+      version: '^17'
     },
     'import/resolver': {
       'babel-module': {
@@ -46,7 +44,8 @@ const eslintConfig = {
     'import/no-unresolved': [
       2,
       {
-        ignore: ['react-?', '.svg?']
+        ignore: ['react-?', '.svg?'],
+        caseSensitive: false
       }
     ]
   }

@@ -15,6 +15,6 @@
 ```
 docker run --rm -p 3000:3000 $(docker build \
     --build-arg NODE_ENV=production \
-    --build-arg NODE_IMAGE=8.12.0-alpine \
+    --build-arg NODE_IMAGE=lts-alpine \
 .)
 ```

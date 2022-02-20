@@ -6,7 +6,8 @@ const nextConfig = ({ defaultConfig }) => ({
   encoding: 'utf-8',
   webpack: config => ({ ...config, node: { ...config.node, fs: 'empty' } }),
   target: 'server',
-  poweredByHeader: false
+  poweredByHeader: false,
+  swcMinify: true
 });
 
 module.exports = phase => {

@@ -12,7 +12,7 @@ before_install:
   - docker build 
       -t cheshirecode/cheshirecode-next-boilerplate 
       --build-arg NODE_ENV=production 
-      --build-arg NODE_IMAGE=8.12.0-alpine 
+      --build-arg NODE_IMAGE=lts-alpine 
     .
 script:
   - docker run --rm 
