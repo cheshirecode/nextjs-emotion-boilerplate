@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Nextjs with emotion",
   "bin": "server/index.js",
+  "engines": {
+    "node": ">= 12"
+  },
   "keywords": [
     "nextjs",
     "esm",
