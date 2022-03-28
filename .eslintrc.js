@@ -47,7 +47,9 @@ const eslintConfig = {
         ignore: ['react-?', '.svg?'],
         caseSensitive: false
       }
-    ]
+    ],
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off'
   }
 };
 module.exports = eslintConfig;

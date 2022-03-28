@@ -54,16 +54,20 @@ export const Basic = styled('div')`
 
 export const Combined = styled('div')`
   ${basicStyles};
+
   ${hoverStyles};
+
   & code {
     background-color: linen;
   }
 `;
 export const Animated = styled('div')`
   ${basicStyles};
+  
   ${hoverStyles};
+
   & code {
     background-color: linen;
   }
-  animation: ${props => props.animation} 0.2s infinite ease-in-out alternate;
+  animation: ${(props) => props.animation} 0.2s infinite ease-in-out alternate;
 `;

@@ -1,4 +1,3 @@
-import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import sprite from 'svg-sprite-loader/runtime/sprite.build';
 import { extractCritical } from '@emotion/server';
