@@ -1,13 +1,14 @@
 module.exports = {
   root: ['./'],
   alias: {
-    '~': './client',
-    '^@cnbu/(.+)': './client/\\1',
-    '@cnbu-components': './client/components',
-    '@cnbu-containers': './client/containers',
-    '@cnbu-hocs': './client/hocs',
-    '@cnbu-services': './client/services',
-    '@cnbu-static': './static'
+    '~': './',
+    '^@cnbu/(.+)': './\\1',
+    '@cnbu-components': './components',
+    '@cnbu-containers': './containers',
+    '@cnbu-hocs': './hocs',
+    '@cnbu-services': './services',
+    '@cnbu-public': './public',
+    '@cnbu-styles': './styles'
   },
   extensions: ['.js', '.mjs', '.json']
 };

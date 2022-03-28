@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { hydrate } from 'emotion';
-import { injectGlobalStyles } from '@cnbu-static/styles';
+import { hydrate } from  '@emotion/css';
+import { injectGlobalStyles } from '@cnbu-styles';
 
 export default App => {
   class ComponentWithEmotion extends Component {

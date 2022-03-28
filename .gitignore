@@ -62,8 +62,8 @@ typings/
 .cache
 
 # next.js build output
-client/.next
-client/bundles
+.next
+bundles
 out
 
 # nuxt.js build output

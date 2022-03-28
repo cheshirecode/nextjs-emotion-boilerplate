@@ -1,24 +1,26 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
+    "target": "esnext",
     "module": "commonjs",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "sourceMap": true,
     "strict": false,
     "skipLibCheck": true,
     "paths": {
-      "~/*": ["./client/*"],
-      "@/*": ["./client/*"],
-      "@cnbu-components/*": ["./client/components/*"],
-      "@cnbu-containers/*": ["./client/containers/*"],
-      "@cnbu-hocs/*": ["./client/hocs/*"],
-      "@cnbu-services/*": ["./client/services/*"],
-      "@cnbu-static/*": ["./static/*"]
+      "~/*": ["./*"],
+      "@/*": ["./*"],
+      "@cnbu-components/*": ["./components/*"],
+      "@cnbu-containers/*": ["./containers/*"],
+      "@cnbu-hocs/*": ["./hocs/*"],
+      "@cnbu-services/*": ["./services/*"],
+      "@cnbu-public/*": ["./public/*"],
+      "@cnbu-styles/*": ["./styles/*"]
     }
   },
   "include": [
-    "./client/**/*",
-    "./server/**/*",
+    "./**/*",
+    "./server/**/*", "components",
   ],
   "exclude": [
     "./node_modules",
