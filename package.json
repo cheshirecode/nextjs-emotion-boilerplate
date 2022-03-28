@@ -18,7 +18,7 @@
     "start": "NODE_ENV=production node -r esm server",
     "deploy": "rm -rf client/.next client/bundles && npx vercel alias $(npx vercel . --token $NOW_TOKEN) cheshirecode-next-boilerplate",
     "analyze": "NODE_ENV=production ANALYZE=both yarn build",
-    "count": "npx cloc {*.js,client,server,static} --exclude-dir=.next,bundles,node_modules --exclude-ext=json --by-file  --skip-uniqueness",
+    "count": "npx cloc --vcs=git --exclude-ext=json --by-file-by-lang --skip-uniqueness",
     "prepare": "husky install"
   },
   "browser": {
