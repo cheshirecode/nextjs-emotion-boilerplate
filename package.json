@@ -31,10 +31,10 @@
     "webpack": false
   },
   "dependencies": {
-    "@emotion/css": "^11.7.1",
+    "@emotion/css": "^11.10.5",
     "@emotion/react": "^11.8.1",
     "@emotion/server": "^11.4.0",
-    "@emotion/styled": "^11",
+    "@emotion/styled": "^11.10.5",
     "emotion": "^11",
     "next": "latest",
     "prop-types": "^15.6.2",
